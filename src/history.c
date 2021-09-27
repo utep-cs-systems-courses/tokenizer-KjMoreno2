@@ -68,6 +68,8 @@ void free_history (List *list) {
   while (list->root != NULL) {
     head = list->root;
     list->root = list->root->next;
+    free(head->str);
     free(head);
   }
+  free(list);
 }
